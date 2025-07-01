@@ -4,6 +4,7 @@ import pyautogui
 import time
 import webbrowser, os
 import sys
+import pyperclip
 
 # -------------------------
 # VERIFICAÇÃO DE RESOLUÇÃO
@@ -15,6 +16,14 @@ if pyautogui.size() != resolucao_esperada:
     sys.exit()
 
 # -------------------------
+# FUNÇÃO PYPERCLIP
+# -------------------------
+def write(text):
+    pyperclip.copy(text)
+    pyautogui.hotkey("ctrl", "v")
+    time.sleep(0.2)
+    
+# -------------------------
 # ABRE O FORMULÁRIO HTML
 # -------------------------
 webbrowser.open(f"file://{os.path.abspath('form.html')}")
@@ -23,7 +32,7 @@ time.sleep(2)
 # -------------------------
 # LÊ A PLANILHA
 # -------------------------
-df = pd.read_csv("clientes.csv")
+df = pd.read_csv("clientes.csv", encoding="utf-8")
 
 # -------------------------
 # COORDENADAS
@@ -51,17 +60,17 @@ for index, cliente in df.iterrows():
 
     # --- Campo: First Name ---
     pyautogui.click(coords["first_name"])
-    pyautogui.write(cliente["first_name"])
+    write(cliente["first_name"])
     time.sleep(0.5)
 
     # --- Campo: Last Name ---
     pyautogui.press("tab")
-    pyautogui.write(cliente["last_name"])
+    write(cliente["last_name"])
     time.sleep(0.5)
 
     # --- Campo: Job Title ---
     pyautogui.press("tab")
-    pyautogui.write(cliente["job_title"])
+    write(cliente["job_title"])
     time.sleep(0.5)
 
     # --- Education ---
