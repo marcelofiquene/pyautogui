@@ -1,4 +1,5 @@
 Automação de Preenchimento de Formulários
+
 Este projeto Python automatiza o preenchimento de um formulário HTML usando dados de um arquivo CSV. Ele utiliza a biblioteca pyautogui para simular interações do usuário (cliques e digitação) e pandas para ler os dados dos clientes.
 
 🚀 Funcionalidades
