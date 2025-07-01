@@ -102,6 +102,11 @@ Mensagens de progresso e erros serão exibidas no console.
 
 ---
 
+## Demonstração do Projeto
+
+![Demonstração](assets/demo.gif)
+
+
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas!  
